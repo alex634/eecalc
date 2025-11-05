@@ -1,6 +1,9 @@
 # eecalc
 An expression calculator programmed in ReactJS with the capability of being extended using custom user functions. 
 
+![eecalc](https://github.com/user-attachments/assets/e991ee99-ac15-4dfc-ae89-26b1b0b3a382)
+
+
 ## Preface
 
 I made this calculator to practice React and Javascript before an interview I had. This project isn't supposed to be production ready both from a UI standpoint and a functionality standpoint. That being said, it seems to function very well. It doesn't seem to give bad values with the exception that "Infinity" is returned instead of "Undefined" when dividing by zero.
