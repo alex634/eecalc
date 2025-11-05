@@ -50,18 +50,14 @@ negation = "-" right:function {
 }
 / function;
 
-function = fname:[a-zA-Z]+ "(" paramName:[a-zA-Z]+ "=" neg:("-")? paramValue:primary restParams:("," [a-zA-Z]+ "=" ("-")? primary)*  ")" {
+function = fname:[a-zA-Z]+ "(" paramName:[a-zA-Z]+ "=" paramValue:addsub restParams:("," [a-zA-Z]+ "=" addsub)*  ")" {
     let params = {};
-    params[paramName.join("")] =  (!neg) ? paramValue: -1 * paramValue;
+    params[paramName.join("")] = paramValue;
     
     if (restParams !== null) {
     
         for (const restParam of restParams) {
-            if (restParam[3] !== null) {
-                params[restParam[1].join("")] = -1.0 * restParam[4];
-            } else {
-                params[restParam[1].join("")] = restParam[4];
-            }
+            params[restParam[1].join("")] = restParam[3];
         }
     
     }
